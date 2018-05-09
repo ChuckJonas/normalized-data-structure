@@ -1,0 +1,27 @@
+{
+  "name": "normalized-data-structure",
+  "version": "1.0.0",
+  "description": "Utilities for working with simple \"Normalized\" structure with immutablity.  Designed for Redux",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChuckJonas/normalized-data-structure.git"
+  },
+  "keywords": [
+    "redux",
+    "normalized"
+  ],
+  "author": "Charlie Jonas",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ChuckJonas/normalized-data-structure/issues"
+  },
+  "homepage": "https://github.com/ChuckJonas/normalized-data-structure#readme",
+  "devDependencies": {
+    "typescript": "^2.8.3"
+  }
+}
