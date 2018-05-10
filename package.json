@@ -1,6 +1,6 @@
 {
   "name": "normalized-data-structure",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities for working with simple \"Normalized\" structure with immutablity.  Designed for Redux",
   "main": "build/index.js",
   "typings": "build/index.d.ts",

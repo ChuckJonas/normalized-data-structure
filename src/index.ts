@@ -33,15 +33,6 @@ export const normalized = {
       });
       return ret;
     },
-    addItem: <T, K extends keyof T>(normalizedObjs: Normalized<T>, key: K, item: T): Normalized<T> => {
-      const index = item[key] as any;
-      const byId = { ...normalizedObjs.byId, [index]: item };
-      let allIds = normalizedObjs.allIds;
-      if (allIds.indexOf(index) === -1) {
-        allIds = normalizedObjs.allIds.concat(index);
-      }
-      return { byId, allIds };
-    },
     set: <T>(normalizedObjs: Normalized<T>, key: string, item: T): Normalized<T> => {
       const byId = { ...normalizedObjs.byId, [key]: item };
       let allIds = normalizedObjs.allIds;
@@ -50,11 +41,11 @@ export const normalized = {
       }
       return { byId, allIds };
     },
-    addItems: <T, K extends keyof T>(normalizedObjs: Normalized<T>, key: K, items: T[]): Normalized<T> => {
+    addItems: <T, K extends keyof T>(normalizedObjs: Normalized<T>, keySelector: (item:T) => string, items: T[]): Normalized<T> => {
       const newByIds = normalized.empty<T>().byId;
       const allIds = normalizedObjs.allIds.slice();
       for (const item of items){
-        const index = item[key] as any;
+        const index = keySelector(item);
         newByIds[index] = item;
         if (allIds.indexOf(index) === -1) {
           allIds.push(index);
