@@ -11,9 +11,9 @@ export const normalized = {
       };
       return obj;
     },
-    forEach: <T>(normalizedObjs: Normalized<T>, callback: (obj: T) => void) => {
+    forEach: <T>(normalizedObjs: Normalized<T>, callback: (obj: T, key: string) => void) => {
       normalizedObjs.allIds.forEach((id) => {
-        callback(normalizedObjs.byId[id]);
+        callback(normalizedObjs.byId[id], id);
       });
     },
     map: <T>(normalizedObjs: Normalized<T>, callback: (obj: T) => any) => {
