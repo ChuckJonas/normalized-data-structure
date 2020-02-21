@@ -4,9 +4,14 @@ A very simple library to make it easier to work with [Redux Normalizing State Sh
 
 Written in typescript.
 
+## Structure
+
+`byId`: Simple "dictionary", where the object key is the items unique identifier
+`allIds`: Array of all unique identifiers
+
 ## Usage
 
-- `empty<T>`: create a new normalized data structure of type `T` `{ byId: {}, allIds: [] }`
+- `empty<T>`: create a new normalized data structure of type `T`.  Ex: `{ byId: {}, allIds: [] }`
 - `forEach`: loop through each item
 - `map`: map items returning a new Array
 - `filter`: filter items, returning a new Array
