@@ -22,8 +22,8 @@ export const normalized = {
       callback(normalizedObjs.byId[id], id, i);
     });
   },
-  map: <T>(normalizedObjs: Normalized<T>, callback: (obj: T) => any) => {
-    const ret: any[] = [];
+  map: <T, U>(normalizedObjs: Normalized<T>, callback: (obj: T) => U) => {
+    const ret: U[] = [];
     normalizedObjs.allIds.forEach((id) => {
       ret.push(callback(normalizedObjs.byId[id]));
     });
